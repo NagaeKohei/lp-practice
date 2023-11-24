@@ -5,16 +5,163 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/style.css">
+    <!--アイコンのサイトに繋がるURL*/-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
 </head>
 
 <body>
-  <!-- Wrokの部分のテキストはこちらを使ってください -->
-  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-  dolore magna
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis
-  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-  sint -->
+  <header>
+    <nav class="hd-nav inner">
+      <div class="hd-icon">
+        <i class="fas fa-archway fa-3x"></i>
+      </div>
+      <div class="hd-contact">
+        <a href="#">Contact</a>
+      </div>
+      <div class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+      </div>
+    </nav>  
+  </header>
+
+  <main>
+    <section class="keyvisual">
+      <div class="back-img">
+        <div class="key-text">
+          <h1>WEB PRODUCTION COMPANY</h1>
+          <p>DIRECTION,CONTENT MARKEING</p>
+        </div>
+      </div>
+    </section><!-- メインタイトル、サブタイトル、背景画像がある部分 -->
+    
+    <section class="work">
+      <div class="work-content inner">
+        <div class="work-img">
+          <img src="./img/pc/pc.png" alt="パソコンのイラスト画像です">
+        </div>
+        <div class="work-text">
+          <h2>WORK</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis
+            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint</p>
+        </div>
+      </div>
+    </section><!-- 「WORK」のタイトルがある部分 -->
+    
+    <section class="skills">
+      <div class="skill-content inner">
+        <h2>WE ARE SKILLS</h2>
+        <ul class="skill-list">
+          <li>
+            <img src="./img/skills/skills_1.png" alt="ウェブページのイラスト画像です">
+          </li>
+          <li>
+            <img src="./img/skills/skills_2.png" alt="カメラのイラスト画像です">
+          </li>
+          <li>
+            <img src="./img/skills/skills_3.png" alt="クラウドのイラスト画像です">
+          </li>
+          <li>
+            <img src="./img/skills/skills_4.png" alt="movieのイラスト画像です">
+          </li>
+          <li>
+            <img src="./img/skills/skills_5.png" alt="写真のイラスト画像です">
+          </li>
+          <li>
+            <img src="./img/skills/skills_6.png" alt="ヘッドフォンのイラスト画像です">
+          </li>
+        </ul>
+      </div>
+    </section><!-- 「WE ARE SKILLS」のタイトルがある部分-->
+    
+    <section class="plan">
+      <div class="plan-content inner">
+        <h2>SELECT PLAN</h2>
+        <div class="plan-table-content">
+          <table class="plan-table">
+            <tbody class="plan-tbody">
+              <tr>
+                <th>PLAN</th>
+                <th>BASIC PLAN</th>
+                <th> STANDARD PLAN</th>
+                <th>ENTERPRISE PLAN</th>
+              </tr>
+              <tr>
+                <th>PRICE</th>
+                <td>￥100,000</td>
+                <td>￥200,000</td>
+                <td>￥300,000</td>
+              </tr>
+              <tr>
+                <th>DELIVERY</th>
+                <td>Manuscript</td>
+                <td>HTML</td>
+                <td>Manuscript,HTML,PSD</td>
+              </tr>
+              <tr>
+                <th>ANALYSIS</th>
+                <td>〇</td>
+                <td>〇</td>
+                <td>〇</td>
+              </tr>
+              <tr>
+                <th>IMPROVEMENT</th>
+                <td>×</td>
+                <td>〇</td>
+                <td>〇</td>
+              </tr>
+              <tr>
+                <th>DESIGN</th>
+                <td>×</td>
+                <td>×</td>
+                <td>〇</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section><!-- 「SELECT PLAN」のタイトルがある部分 -->
+    
+    <nav class="sns">
+      <div class="sns-content inner">
+        <ul class="sns-list">
+          <li>
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-dribbble"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-envelope"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav><!-- iconが並んでいる部分 --> 
+  </main>
+    
+  <footer>
+    <div class="inner">
+      <p>Copyright(c)</p>
+    </div>
+  </footer>
 </body>
 
 </html>
