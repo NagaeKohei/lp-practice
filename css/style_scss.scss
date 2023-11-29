@@ -1,0 +1,361 @@
+@charset "utf-8";
+
+//ここでtabとspの幅を定義
+$tab: 1199px; 
+$sp: 767px; 
+//ここでmax-widthを指定
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+
+  @include tab {
+    width: 97%;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 40px;
+  letter-spacing: 10px;
+}
+
+
+//headerここから
+header {
+  background-color: #fff;
+  .hd-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .hd-icon i {
+    padding: 15px 0;
+    color: #777;
+  }
+  .hd-contact a{
+    color: #fff;
+    background-color: #6ba7eb;
+    font-size: 12px;
+    padding: 12px 14px;
+    transition: color 0.3s;
+    &:hover {
+      color: #333;
+    }
+  }
+  .hamburger-menu {
+    display: none;
+  }
+
+  @include sp {
+    //ハンバーガーメニューここから
+    .hd-contact {
+      display: none;
+    }
+    .hamburger-menu {
+      display: block;
+      position: relative;
+    }
+    #menu-btn-check {
+      display: none;
+    }
+    .menu-btn {
+      top: 10px;
+      right: 10px;
+      display: flex;
+      height: 60px;
+      width: 60px;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+    .menu-btn span, .menu-btn span:before, .menu-btn span:after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25px;
+      border-radius: 3px;
+      background-color: #3584bb;
+      position: absolute;
+    }
+    .menu-btn span:before {
+      bottom: 8px;
+    }
+    .menu-btn span:after {
+      top: 8px;
+    }
+    #menu-btn-check:checked ~ .menu-btn span {
+      background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+    }
+    #menu-btn-check:checked ~ .menu-btn span::before {
+      bottom: 0;
+      transform: rotate(45deg);
+    }
+    #menu-btn-check:checked ~ .menu-btn span::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+    #menu-btn-check:checked ~ .menu-content {
+      display: block;
+    }
+    //ハンバーガーメニューここまで
+  }
+}
+//headerここまで
+
+
+//mainここから
+//keyvisualここから
+.back-img {
+  background-image: url(../img/keyvisual/keyvisual.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  .key-text {
+    padding: 400px 0;
+    h1 {
+      font-size: 65px;
+      font-weight: 700;
+      color: #6ba7eb;
+    }
+    p {
+      margin-top: 30px;
+      font-size: 40px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    @include tab {
+      padding: 250px 0;
+    }
+
+    @include sp {
+      padding: 200px 0;
+      h1 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 30px;
+      }
+    }
+  }
+}
+//keyvisualここまで
+
+//workここから
+.work {
+  background-color: #e3f2fd;
+  .work-content {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include tab {
+      flex-direction: column;
+    }
+  }
+  .work-img {
+    text-align: center;
+    width: 40%;
+    img {
+      width: 250px;
+    }
+    @include sp {
+      width: 100%;
+    }
+  }
+  .work-text {
+    width: 60%;
+    text-align: center;
+    h2 {
+      margin-top: 20px;
+    }
+    p {
+      margin-top: 35px;
+      font-size: 15px;
+      line-height: 18px;
+      word-break: break-all;
+    }
+    @include tab {
+      width: 100%;
+      padding-bottom: 50px;  
+    }
+  }
+}
+//workここまで
+
+//skillここから
+.skills {
+  background-color: #fff;
+  .skill-content {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    .skill-list {
+      margin-top: 50px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      li {
+        width: 300px;
+        height: 300px;
+        margin-top: 100px;
+        margin-right: 100px;
+        &:nth-child(1),&:nth-child(2),&:nth-child(3) {
+          margin-top: 0;
+        }
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+        img {
+          width: 100%;
+          opacity: 0.7;
+          &:hover {
+            opacity: 1.0;
+          }
+        }
+      }
+
+      @include tab {
+        flex-direction: column;
+        align-items: center;
+        li {
+          margin: 0;
+          &:nth-child(3n) {
+            margin-bottom: 80px;
+          }
+        }
+      }
+    }
+  }
+}
+//skillここまで
+
+//planここから
+.plan {
+  background-color: #d0dfea;
+  .plan-content {
+    text-align: center;
+    padding: 50px 0;
+  }
+  .plan-table-content {
+    width: 100%;
+    overflow: auto;
+    margin: 50px auto 0 auto;
+  }
+  .plan-table {
+    width: 100%;
+    .plan-tbody {
+      width: 100%;
+    }
+    tr {
+      background-color: #6ba7eb;
+      &:nth-child(2),&:nth-child(4),&:nth-child(6) {
+        background-color: #f9f9f9;
+      }
+      &:nth-child(3),&:nth-child(5) {
+        background-color: #e0efff;
+      }
+      th {
+        width: 25%;
+        font-size: 16px;
+        line-height: 26px;
+        border-left: 2px solid #fff;
+        padding: 10px;
+        &:first-child {
+          border-left:none
+        }
+        @include sp {
+          font-size: 14px;
+          line-height: 22px;
+        }
+      }
+      td {
+        width: 25%;
+        font-size: 14px;
+        line-height: 26px;
+        border-left: 2px solid #fff;
+        padding: 10px;
+        @include sp {
+          font-size: 12px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}
+//planここまで
+
+//snsここから
+.sns {
+  background-color: #e3f2fd;
+  .sns-content {
+    padding: 200px 0;
+  }
+  .sns-list {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    li {
+      width: 185pX;
+      transition: background-color 0.5s;
+      a {
+        display: inline-block;
+        width: 100%;
+        i {
+          color: #8c8c8c;
+          overflow: hidden;
+          font-size: 40px;
+        }
+      }
+      &:hover {
+        background-color: #fff;
+      }
+    }
+  }
+
+  @include sp {
+    .sns-content {
+      padding: 50px 0;
+      .sns-list {
+        flex-direction: column;
+        align-items: center;
+        li {
+          width: 100%;
+          margin: 50px 15px;
+        }
+      }
+    }
+  }
+}
+//snsここまで
+//mainここまで
+
+//footerここから
+footer {
+  background-color: #cfd8cd;
+  text-align: right;
+  p {
+    padding: 20px 0;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+}
+//footerここまで
